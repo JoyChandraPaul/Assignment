@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="bootstrap.css">
+  <title>Calculator</title>
+</head>
+
+<body>
+  <section>
+    <div class="container">
+      <div class="row g-3 my-5">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-12">
+              <label for="first_num" class="form-label">Enter 1st Number</label>
+              <input type="number" class="form-control" id="first_num" placeholder="Enter 1st Number">
+            </div>
+            <div class="col-md-12 mt-2">
+              <label for="operator" class="form-label">Operator</label>
+              <select id="operator" class="form-select">
+                <option value="+">Addition (+)</option>
+                <option value="-">Subtraction (-)</option>
+                <option value="*">Multiplication (*)</option>
+                <option value="/">Division (/)</option>
+              </select>
+            </div>
+            <div class="col-md-12 mt-2">
+              <label for="second_num" class="form-label">Enter 2nd Number</label>
+              <input type="number" class="form-control" id="second_num" placeholder="Enter 2nd Number">
+            </div>
+            <div class="col-md-12 mt-2">
+              <button type="button" class="btn btn-success btn-lg form-control rounded-pill" onclick="cal()">Calculate</button>
+            </div>
+            <div class="col-md-12 mt-5">
+              <label for="result" class="form-label">RESULT: </label>
+              <input type="text" class="form-control" id="result" placeholder="Result" readonly>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+
+  <script>
+    function cal() {
+      let n1 = parseFloat(document.getElementById('first_num').value);
+      let n2 = parseFloat(document.getElementById('second_num').value);
+      let oper = document.getElementById('operator').value;
+      let result = 0;
+      if (oper === '+') {
+        result = n1 + n2;
+      } else if (oper === '-') {
+        result = n1 - n2;
+      } else if (oper === '*') {
+        result = n1 * n2;
+      } else {
+        result = n1 / n2;
+      }
+
+      document.getElementById('result').value = result;
+
+    }
+  </script>
+</body>
+
+</html>
